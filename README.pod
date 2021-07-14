@@ -10,7 +10,7 @@ LaTeXML is a TeX & LaTeX to XML, HTML, MathML, ePub, JATS, ... converter.
 
 See the included L<Manual|http://dlmf.nist.gov/LaTeXML/manual.pdf> for documentation.
 
-See the installation instructions L<here|./INSTALL.md>.
+See the installation instructions L<here|INSTALL.md>.
 
 The official project home page is at L<http://dlmf.nist.gov/LaTeXML/>.
 
