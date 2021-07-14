@@ -26,26 +26,28 @@ This is a short guide how to install the non graphical version of LaTeXML on deb
 
 and paste the contents of my latexml config file which I have given below:
 
-    Listen 8888
+```httpd
+Listen 8888
 
-    <VirtualHost *:8888>
-        ServerName localhost
-        PerlOptions +Parent
+<VirtualHost *:8888>
+    ServerName localhost
+    PerlOptions +Parent
 
-        <Perl>
-          $ENV{PLACK_ENV} = 'production';
-        </Perl>
+    <Perl>
+      $ENV{PLACK_ENV} = 'production';
+    </Perl>
 
-        <Location />
-          SetHandler perl-script
-          PerlHandler Plack::Handler::Apache2
-          PerlSetVar psgi_app /usr/local/bin/ltxpsgi
-        </Location>
+    <Location />
+      SetHandler perl-script
+      PerlHandler Plack::Handler::Apache2
+      PerlSetVar psgi_app /usr/local/bin/ltxpsgi
+    </Location>
 
-        ErrorLog /var/log/apache2/latexml.error.log
-        LogLevel warn
-        CustomLog /var/log/apache2/latexml.access.log combined
-    </VirtualHost>
+    ErrorLog /var/log/apache2/latexml.error.log
+    LogLevel warn
+    CustomLog /var/log/apache2/latexml.access.log combined
+</VirtualHost>
+```
 
 Then;
 
