@@ -26,7 +26,7 @@ This is a short guide how to install the non graphical version of LaTeXML on deb
 
 and paste the contents of my latexml config file which I have given below:
 
-```httpd
+```ApacheConf
 Listen 8888
 
 <VirtualHost *:8888>
