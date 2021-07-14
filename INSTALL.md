@@ -3,10 +3,10 @@ Copied from [here](https://web.archive.org/web/20170421212858/https://www.formul
 This is a short guide how to install the non graphical version of LaTeXML on debian as a web service that you can use as server for converting LaTeX to MathML. If you need a user interface see this outdated [guide](https://web.archive.org/web/20170331191031/http://formulasearchengine.com/LaTeXML_UI). here a part of my history where I insalled everything from my LaTeXML home '/home/LaTeXML' replace that with whatever you think suitable for you.
 
     sudo apt-get install   \
-    libarchive-zip-perl libfile-which-perl libimage-size-perl \
-    libio-string-perl libjson-xs-perl libwww-perl libparse-recdescent-perl \
-    liburi-perl libxml2 libxml-libxml-perl libxslt1.1 libxml-libxslt-perl \
-    texlive imagemagick perlmagick make
+        libarchive-zip-perl libfile-which-perl libimage-size-perl \
+        libio-string-perl libjson-xs-perl libwww-perl libparse-recdescent-perl \
+        liburi-perl libxml2 libxml-libxml-perl libxslt1.1 libxml-libxslt-perl \
+        texlive imagemagick perlmagick make
     mkdir /home/LaTeXML
     cd /home/LaTeXML
     git clone https://github.com/brucemiller/LaTeXML.git
@@ -27,9 +27,9 @@ This is a short guide how to install the non graphical version of LaTeXML on deb
 and paste the contents of my latexml config file which I have given below:
 
     Listen 8888
-    <VirtualHost *:8888>
-    ServerName localhost
 
+    <VirtualHost *:8888>
+        ServerName localhost
         PerlOptions +Parent
 
         <Perl>
@@ -46,6 +46,8 @@ and paste the contents of my latexml config file which I have given below:
         LogLevel warn
         CustomLog /var/log/apache2/latexml.access.log combined
     </VirtualHost>
+
+Then;
 
     a2ensite latexml
     apache2ctl restart
